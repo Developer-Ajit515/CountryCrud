@@ -1,0 +1,138 @@
+<div class="container py-5">
+
+  <div class="card shadow-lg border-0 rounded-4">
+
+    <div class="card-header bg-primary text-white py-3">
+      <h3 class="mb-0">
+        <i class="bi bi-globe2 me-2"></i>
+        Country Management
+      </h3>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row g-3">
+
+        <div class="col-md-5">
+          <label class="form-label fw-bold">Country Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Country Name"
+            [(ngModel)]="country.countryName">
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Country Code</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="IN, US..."
+            [(ngModel)]="country.countryCode">
+        </div>
+
+        <div class="col-md-2">
+          <label class="form-label fw-bold">Status</label>
+
+          <div class="form-check form-switch mt-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [(ngModel)]="country.isActive">
+          </div>
+
+        </div>
+
+        <div class="col-md-2 d-grid">
+
+          <label class="form-label">&nbsp;</label>
+
+          <button class="btn btn-success" (click)="save()">
+
+            {{country.id==0?'Save':'Update'}}
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <div class="table-responsive">
+
+        <table class="table table-hover table-bordered align-middle">
+
+          <thead class="table-dark">
+
+          <tr>
+
+            <th width="70">ID</th>
+
+            <th>Country</th>
+
+            <th>Code</th>
+
+            <th width="120">Status</th>
+
+            <th width="170" class="text-center">Action</th>
+
+          </tr>
+
+          </thead>
+
+          <tbody>
+
+          <tr *ngFor="let c of countries">
+
+            <td>{{c.id}}</td>
+
+            <td>{{c.countryName}}</td>
+
+            <td>{{c.countryCode}}</td>
+
+            <td>
+
+              <span
+                class="badge"
+                [ngClass]="c.isActive ? 'bg-success':'bg-danger'">
+
+                {{c.isActive?'Active':'Inactive'}}
+
+              </span>
+
+            </td>
+
+            <td class="text-center">
+
+              <button
+                class="btn btn-warning btn-sm me-2"
+                (click)="edit(c)">
+
+                Edit
+
+              </button>
+
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="delete(c.id)">
+
+                Delete
+
+              </button>
+
+            </td>
+
+          </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

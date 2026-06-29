@@ -1,0 +1,116 @@
+<div class="container mt-5">
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+<h3>Payment Gateway</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label>Name</label>
+
+<input
+class="form-control"
+[(ngModel)]="payment.customerName">
+
+</div>
+
+<div class="col-md-4">
+
+<label>Email</label>
+
+<input
+class="form-control"
+[(ngModel)]="payment.email">
+
+</div>
+
+<div class="col-md-2">
+
+<label>Amount</label>
+
+<input
+type="number"
+class="form-control"
+[(ngModel)]="payment.amount">
+
+</div>
+
+<div class="col-md-2">
+
+<br>
+
+<button
+class="btn btn-success w-100"
+(click)="payNow()">
+
+Pay Now
+
+</button>
+
+</div>
+
+</div>
+
+<hr>
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Amount</th>
+
+<th>Transaction</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let p of payments">
+
+<td>{{p.customerName}}</td>
+
+<td>{{p.email}}</td>
+
+<td>{{p.amount}}</td>
+
+<td>{{p.transactionId}}</td>
+
+<td>
+
+<span class="badge bg-success">
+
+{{p.paymentStatus}}
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
