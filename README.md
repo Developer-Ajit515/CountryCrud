@@ -1,59 +1,90 @@
-# CountryCrud
+# Country CRUD Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+A full-stack Country Management System developed using ASP.NET Core Web API and Angular 19.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Add Country
+- Update Country
+- Delete Country
+- View Country List
+- Active / Inactive Status
+- Responsive Bootstrap UI
+- RESTful API Integration
+
+## Technologies Used
+
+### Backend
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- C#
+
+### Frontend
+- Angular 19
+- TypeScript
+- Bootstrap 5
+- HTML5
+- SCSS
+
+## Project Structure
+
+CountryCrudAPI/
+    Controllers/
+    Models/
+    Data/
+
+CountryCrud/
+    src/
+    app/
+    components/
+    services/
+    models/
+
+## API Endpoints
+
+GET    /api/Country
+
+GET    /api/Country/{id}
+
+POST   /api/Country
+
+PUT    /api/Country/{id}
+
+DELETE /api/Country/{id}
+
+## Getting Started
+
+### Backend
+
+1. Open the API project in Visual Studio.
+2. Update the SQL Server connection string.
+3. Run the project.
+
+### Frontend
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Screenshots
 
-```bash
-ng generate --help
-```
+(Add project screenshots here)
 
-## Building
 
-To build the project run:
+## Author
 
-```bash
-ng build
-```
+Ajit Singh
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+LinkedIn:
+(Add Your LinkedIn)
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+GitHub:
+[(Add Your GitHub Profile)](https://github.com/Developer-Ajit515)
