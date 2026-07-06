@@ -1,0 +1,119 @@
+<div class="container mt-5">
+
+    <!-- Payment Form -->
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Online Payment</h4>
+        </div>
+
+        <div class="card-body">
+
+            <!-- Customer Name -->
+            <div class="mb-3">
+                <label class="form-label">Customer Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Customer Name"
+                    [(ngModel)]="payment.customerName"
+                    name="customerName">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                    [(ngModel)]="payment.email"
+                    name="email">
+            </div>
+
+            <!-- Amount -->
+            <div class="mb-3">
+                <label class="form-label">Amount (₹)</label>
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter Amount"
+                    [(ngModel)]="payment.amount"
+                    name="amount">
+            </div>
+
+            <button
+                class="btn btn-success w-100"
+                (click)="payNow()">
+                Pay Now
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Payment History -->
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">Payment History</h5>
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-bordered table-hover table-striped">
+
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Customer</th>
+                        <th>Email</th>
+                        <th>Amount</th>
+                        <th>Transaction Id</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let item of payments; let i = index">
+
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ item.customerName }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>₹ {{ item.amount }}</td>
+                        <td>{{ item.transactionId }}</td>
+                        <td>{{ item.paymentMethod }}</td>
+
+                        <td>
+                            <span
+                                class="badge"
+                                [class.bg-success]="item.paymentStatus === 'Success'"
+                                [class.bg-danger]="item.paymentStatus !== 'Success'">
+                                {{ item.paymentStatus }}
+                            </span>
+                        </td>
+
+                        <td>
+                            {{ item.createdDate | date:'dd-MMM-yyyy hh:mm a' }}
+                        </td>
+
+                    </tr>
+
+                    <tr *ngIf="payments.length === 0">
+                        <td colspan="8" class="text-center text-muted">
+                            No Payment Records Found
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
